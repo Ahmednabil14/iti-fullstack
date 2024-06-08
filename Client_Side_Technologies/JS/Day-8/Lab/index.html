@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div id="form">
+        <div id="dapartment">
+            <span>Depatment</span>
+            <label for="sd">SD</label>
+            <input type="radio" id="sd" name="department">
+            <label for="os">OS</label>
+            <input type="radio" id="os" name="department">
+            <label for="el">EL</label>
+            <input type="radio" id="el" name="department">
+            <span id="error"></span>
+        </div>
+        
+        <div>
+            <label for="s-name">StudentName</label>
+            <input type="text" name="s-name" id="s-name">
+            <span id="name-error"></span>
+        </div>
+
+        <div>
+            <label for="s-grade">StudentGrade</label>
+            <input type="number" name="s-grade" id="s-grade">
+            <span id="grade-error"></span>
+        </div>
+        <button id="add-button" class="button">Add</button>
+        <span id="complete-error"></span>
+
+        <div id="sort-container">
+            <label for="sort">Sort</label>
+            <select name="sort" id="sort">
+                <option value="name">Name</option>
+                <option value="grade">Grade</option>
+            </select>
+        </div>
+        <div id="filter-container">
+            <label for="filter">Filter</label>
+            <select name="filter" id="filter">
+                <option value="all">All</option>
+                <option value="success">Success</option>
+                <option value="fail">Fail</option>
+            </select>
+        </div>
+        <table>
+            <tbody>
+            </tbody>
+        </table>    
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

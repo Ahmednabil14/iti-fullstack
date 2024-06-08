@@ -1,0 +1,1 @@
+openScrollClosePage("1-child_page.html")

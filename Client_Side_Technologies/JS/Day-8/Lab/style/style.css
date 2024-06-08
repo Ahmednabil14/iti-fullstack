@@ -1,0 +1,94 @@
+body {
+    background-color: #f4f4f4;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#form {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#dapartment span {
+    margin-right: 10px;
+}
+
+#dapartment {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#dapartment input[type="radio"] {
+    margin-right: 13px;
+}
+
+#form input[type="text"],
+#form input[type="number"],
+#sort select,
+#filter select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+#sort,
+#filter {
+    width: 100px;
+    text-align: center;
+}
+
+#sort {
+    margin-left: 7px;
+}
+#add-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#add-button,
+#sort-container,
+#filter-container {
+    margin-bottom: 15px;
+}
+
+#add-button:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+tr {
+    border-bottom: white solid 1px;
+}
+
+td {
+    text-align: center;
+    padding: 8px;
+    width: 33.33%;
+}
+
+.trash-button {
+    color: red;
+    cursor: pointer;
+    margin-left: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+

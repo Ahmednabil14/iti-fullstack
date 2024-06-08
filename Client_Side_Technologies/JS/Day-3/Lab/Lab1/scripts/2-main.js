@@ -1,0 +1,1 @@
+console.log(longesWord('Web Development Tutorial'));
