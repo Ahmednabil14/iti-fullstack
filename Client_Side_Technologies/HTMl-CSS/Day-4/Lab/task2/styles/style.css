@@ -1,0 +1,10 @@
+#parent {
+    position: relative;
+}
+
+#child {
+    background-color: bisque;
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <h1>
+        Register
+    </h1>
+    <form action="Thankyou.html">
+        <div>
+            <label for="first-name">
+                First Name
+            </label>
+            <input type="text" id="first-name" required>
+        </div>
+
+        <div>
+            <label for="last-name">
+                Last Name
+            </label>
+            <input type="text" id="last-name" required>
+        </div>
+
+        <div>
+            <label for="email">
+                Email
+            </label>
+            <input type="email" id="email" required>
+        </div>
+
+        <div>
+            <label for="password">
+                Password
+            </label>
+            <input type="password" id="password">
+        </div>
+
+        <div>
+            <label for="confirm-pass">
+                Confirm Password
+            </label>
+            <input type="password" id="confirm-pass">
+        </div>
+
+        <div>
+            <label for="birth-date">
+                Date Of Birth
+            </label>
+            <input type="date" id="birth-date">
+        </div>
+
+        <div>
+            <label for="user-pic">
+                Upload your picture
+            </label>
+            <input type="file" id="user-pic" accept="image/*" multiple>
+        </div>
+
+        <fieldset>
+            <legend>
+                Gender
+            </legend>
+            <label for="male">male</label>
+            <input type="radio" name="gender" id="male">
+            <label for="female">female</label>
+            <input type="radio" name="gender" id="female">
+        </fieldset>
+        <br>
+
+        <label for="faculty">
+            Faculty
+        </label>
+        <select id="faculty" name="faculty">
+            <option>
+                --Please choose an option--
+            </option>
+            <option value="engineering">
+                engineering
+            </option>
+            <option value="engineering">
+                engineering
+            </option>
+            <option value="engineering">
+                engineering
+            </option>
+            <option value="engineering">
+                engineering
+            </option>
+        </select>
+
+        <div>
+            <fieldset>
+                <legend>Interests</legend>
+                <label for="Programming">Programming</label>
+                <input type="checkbox" id="Programming">
+                <label for="reading">reading</label>
+                <input type="checkbox" id="reading">
+                <label for="swimming">swimming</label>
+                <input type="checkbox" id="swimming">
+            </fieldset>
+        </div>
+
+        <div>
+            <label for="about">about you</label>
+            <br>
+            <textarea id="about" cols="30" rows="10"></textarea>
+        </div>
+
+        <div>
+            <span>
+                <p>
+                    I agreed to terms and conditions:
+                </p>
+                <label for="con1">
+                    condition1
+                </label>
+                <input type="checkbox" name="con1" id="con1">
+                <label for="con2">
+                    condition2
+                </label>
+                <input type="checkbox" name="con2" id="con2">
+            </span>
+        </div>
+
+        <div>
+            <input type="submit">
+            <input type="reset">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,72 @@
+body {
+  margin: 0px;
+}
+
+header {
+  background-color: #A9AE9F;
+}
+#header-image {
+    width: 100%;
+    height: 7vh;
+}
+
+nav {
+    background-color: #A9AE9F;
+    height: 7vh;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.container {
+  overflow: hidden; /* Prevents floating elements from overflowing */
+}
+
+.col1,.col2,.col3 {
+  float: left;
+  box-sizing: border-box; /* Includes padding and border in element's total width and height */
+}
+
+.col1 {
+  width: 20%;
+  background-color: #999F8E;
+  margin: 0px;
+}
+.col2 {
+  width: 60%; /* Adjusted to fit the new layout */
+  background-color: #D2D8C7;
+}
+.col3 {
+  width: 20%;
+  background-color: #BFBFBF;
+  float: right;
+}
+
+/* Additional styles for child elements within the columns */
+/* Example for login form */
+#login-box {
+  height: 70%;
+  background-color: white;
+  border: 5px solid #999F8E;
+  margin: 10px auto; /* Center horizontally */
+  padding: 10px;
+  text-align: center;
+}
+
+/* Continue adjusting other sections similarly */
+

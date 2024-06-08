@@ -1,0 +1,45 @@
+body {
+    margin: 0px;
+}
+
+header {
+  background-color: #A9AE9F;
+}
+
+nav {
+    background-color: black;
+    height: 5vh;
+    width: 100%;
+    position: fixed;
+}
+
+nav ul {
+  margin: 0;
+  list-style: none;
+  text-align: left;
+  padding-inline-start: 0;
+}
+
+nav li {
+  display: inline-block;
+}
+
+
+nav li a {
+  display: block;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+}
+
+#home-nav {
+    background-color: green;
+}
+
+nav li a:hover {
+    background-color: #A9AE9F;
+}
+
+.contnet {
+    padding-top: 50px;
+}

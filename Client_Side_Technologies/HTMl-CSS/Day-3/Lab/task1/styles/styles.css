@@ -1,0 +1,31 @@
+p {
+    color: red !important;
+}
+
+p,div {
+    color: blue;
+}
+
+#mydiv > .mainClass {
+    font-style: italic;
+}
+
+div p {
+    font-style: oblique;
+}
+
+input[type="text"] {
+    background-color: yellow;
+}
+
+div ~ span {
+    color: blueviolet;
+}
+
+.myClass {
+    background-color: yellowgreen;
+}
+
+#myDiv {
+    background-color: brown;
+}
