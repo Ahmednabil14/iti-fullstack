@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Ahmed</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>aya</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>20</td>
+        </tr>
+    </table>
+
+    <script>
+        $(document).ready(function(){
+            $("tr:nth-child(3)").css({
+                color: "blue",
+                backgroundColor: "yellow"
+            })
+
+            // odd --> 1 3 
+            // even --> 0 2
+        })
+
+    </script>
+</body>
+</html>
