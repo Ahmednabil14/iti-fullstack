@@ -1,0 +1,87 @@
+header {
+    height: 10rem;
+    background-color: #F89422;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px 100px;
+}
+
+header div {
+    width: 30%;
+}
+
+#personal-img {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+}
+
+
+
+header h1, header h4, header p {
+    color: #FFF8D2;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin: 1px;
+}
+
+header p {
+    margin: 7px;
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#right {
+    width: 30%;
+    margin-right: 100px;
+}
+
+#left {
+    margin-left: 50px;
+}
+
+#english {
+    height: 20px;
+    width: 200px;
+    background-image: linear-gradient(to right, #F79523 70%, #E8E8E8 70%);
+}
+
+#german {
+    height: 20px;
+    width: 200px;
+    background-image: linear-gradient(to right, #21C2F6 30%, #E8E8E8 30%);
+}
+
+#spanish {
+    height: 20px;
+    width: 200px;
+    background-image: linear-gradient(to right, #E84737 90%, #E8E8E8 90%);
+
+}
+
+#right h3 {
+    width: 70%;
+    color: #FFF8D2;
+    background-color: #F79523;
+    padding: 7px;
+    margin-bottom: 0;
+}
+
+#right h4 {
+    margin-bottom: 5px;
+}
+
+#right p {
+    margin-top: 0;
+}
+
+#footer {
+    height: 30px;
+    width: 100%;
+    margin-top: 20px;
+    background-image: linear-gradient(to right, #E84737 33%, #F79523 33%, #F79523 66%, #21C2F6 66%);
+}

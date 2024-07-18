@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 | conditional CSS (media queries)</title>
+    <style>
+      /*@media tv {}*/
+      /*@media only screen {}*/
+      /*@media print {}*/
+      /*@media all and (min-width:200px) {}*/
+      /*@media all and (orientation: landscape) {}*/
+      /*@media all and (orientation: portrait) {}*/
+
+      body {
+          background-color: red;
+      }
+
+
+      /* Extra small devices (phones, 600px and down) */
+      @media only screen and (max-width: 600px) {
+          body {
+              background-color: yellow;
+          }
+
+          div {
+              display: none;
+          }
+
+          aside {
+              display: none;
+          }
+      }
+
+      /* Small devices (portrait tablets and large phones, 600px and up) */
+      @media only screen and (min-width: 600px) {
+          body {
+              background-color: hotpink;
+          }
+
+          h2 {
+              display: inline-block;
+          }
+      }
+
+      /* Medium devices (landscape tablets, 768px and up) */
+      @media only screen and (min-width: 768px) {
+          body {
+              background-color: green;
+          }
+      }
+
+      /* Large devices (laptops/desktops, 992px and up) */
+      @media only screen and (min-width: 992px) {
+          body {
+              background-color: purple;
+          }
+      }
+
+      /* Extra large devices (large laptops and desktops, 1200px and up) */
+      @media only screen and (min-width: 1200px) {
+          body {
+              background-color: cyan;
+          }
+      }
+
+      div {
+          font-size: 50px;
+      }
+    </style>
+</head>
+<body>
+<div>
+    Welcome
+</div>
+<aside>side nav</aside>
+<h2>Mahmoud</h2>
+<h2>Elbasha</h2>
+</body>
+</html>

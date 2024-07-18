@@ -1,0 +1,120 @@
+
+header {
+    height: 12rem;
+    background-color: #F89422;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px 100px;
+}
+
+header div {
+    width: 30%;
+}
+
+#personal-img {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+}
+
+
+
+header h2, header h4, header p {
+    color: #FFF8D2;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+
+#english {
+    height: 20px;
+    width: 200px;
+    background-image: linear-gradient(to right, #F79523 70%, #E8E8E8 70%);
+}
+
+#german {
+    height: 20px;
+    width: 200px;
+    background-image: linear-gradient(to right, #21C2F6 30%, #E8E8E8 30%);
+}
+
+#spanish {
+    height: 20px;
+    width: 200px;
+    background-image: linear-gradient(to right, #E84737 90%, #E8E8E8 90%);
+
+}
+
+/* .skill-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid red;
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+} */
+
+.skill-container {
+    display: inline-block;
+}
+
+.skills {
+    margin: 3px;
+}
+
+.info {
+    margin-right: 30px;
+}
+
+.info img {
+    border-radius: 50%;
+}
+
+.achieve p {
+    width: 100%;
+}
+
+#left {
+    height: 100vh;
+}
+
+#right {
+    height: 100vh;
+}
+
+#right h3 {
+    display: inline-block;
+    width: 200px;
+    color: #FFF8D2;
+    background-color: #F79523;
+    padding: 7px;
+    margin-bottom: 0;
+}
+
+#right h4 {
+    margin-bottom: 0px;
+}
+
+#right p {
+    margin-top: 0;
+}
+
+.first {
+    margin-block-start: 0px;
+}
+
+#container {
+    column-count: 2;
+    column-gap: 10px;
+    padding: 40px;
+}
+
+
+#footer {
+    height: 20px;
+    width: 100%;
+    margin: auto;
+    background-image: linear-gradient(to right, #E84737 33%, #F79523 33%, #F79523 66%, #21C2F6 66%);
+}
