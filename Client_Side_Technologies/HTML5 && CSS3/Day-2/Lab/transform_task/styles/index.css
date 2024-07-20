@@ -1,0 +1,11 @@
+#container {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img:hover {
+    transform: scale(1.5);
+    transition: all 2s;
+}
