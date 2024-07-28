@@ -22,6 +22,18 @@
             padding: 0.5rem 1rem;
           }
         }
+
+
+        .nav-hover:hover {
+            text-decoration-line: underline;
+            text-decoration-color: #bb2124 !important;
+            text-underline-offset: .2rem;
+        }
+
+        .form-select {
+            background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23bb2124' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
+            box-shadow: 0.5px 0.5px 3px gray inset !important;
+        }
     </style>
 </head>
 <body>
@@ -60,18 +72,18 @@
         </div>
         <nav class="navbar navbar-expand-sm navbar-light bg-light p-0">
             <div class="container-fluid p-0">
-                <ul class="navbar-nav container-fluid border-top border-dark p-0">
-                    <li class="nav-item">
-                        <a class="nav-link d-none d-md-block border-end border-dark text-dark fw-bold px-4" href="#">PIZZA</a>
+                <ul class="navbar-nav container-fluid border-top border-secondary p-0">
+                    <li class="nav-item border-end border-secondary">
+                        <a class="nav-link d-none d-md-block btn rounded-0 align-content-center h-100 fw-bold px-4 shadow-none" href="#">PIZZA</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link d-none d-md-block border-end border-dark text-dark fw-bold" href="#">STARTERS</a>
+                    <li class="nav-item border-end border-dark">
+                        <a class="nav-link d-none d-md-block btn rounded-0 align-content-center h-100 fw-bold shadow-none" href="#">STARTERS</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link d-none d-md-block border-end border-dark text-dark fw-bold" href="#">SALADS</a>
+                    <li class="nav-item border-end border-dark">
+                        <a class="nav-link d-none d-md-block btn rounded-0 align-content-center h-100 fw-bold shadow-none" href="#">SALADS</a>
                     </li>
                     <li class="nav-item dropdown border-end border-dark">
-                        <a class="nav-link d-none d-md-block dropdown-toggle text-dark fw-bold" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link d-none d-md-block dropdown-toggle fw-bold h-100 align-content-center" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         MORE
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -81,10 +93,10 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link d-none d-md-block border-end border-dark text-dark bg-warning px-5 fw-bold" href="#">DEALS</a>
+                        <a class="nav-link d-none d-md-block align-content-center text-dark btn btn-warning h-100 rounded-0 px-5 fw-bold shadow-none" href="#">DEALS</a>
                     </li>
                     <li class="nav-item w-100">
-                        <a class="nav-link bg-danger text-light text-center fw-bold" href="#">START YOUR ORDER</a>
+                        <a class="nav-link btn btn-danger btn-lg rounded-0 text-light text-center fw-bold shadow-none" href="#">START YOUR ORDER</a>
                     </li>
                 </ul>
             </div>
@@ -93,21 +105,21 @@
           <div class="row-cols-1">
             <div class="container-fluid row-cols-1 position-relative p-0">
                 <img src="images/3.png" alt="" class="d-none d-md-inline-block">
-                <nav class="nav bg-dark custom-navbar">
-                        <a class="nav-link  text-light fw-bold text-decoration-underline" href="#" style="text-decoration-color: #bb2124 !important; text-underline-offset: .2rem;">ALL</a>
-                        <a class="nav-link text-light fw-bold" href="#">BEEF</a>
-                        <a class="nav-link text-light fw-bold" href="#">CHICKEN</a>
-                        <a class="nav-link text-light fw-bold" href="#">VEGETARIAN</a>
-                        <a class="nav-link text-light fw-bold" href="#" >SPECIALITY</a>
-                        <a class="nav-link text-light fw-bold" href="#">EXTREME PIZZA</a>
-                        <a class="nav-link text-light fw-bold" href="#">SEA FOOD</a>
+                <nav class="nav bg-dark custom-navbar" style="opacity: .8;">
+                        <a class="nav-link  text-light fw-bold text-decoration-underline p-md-2 ps-md-3" href="#" style="text-decoration-color: #bb2124 !important; text-underline-offset: .2rem;">ALL</a>
+                        <a class="nav-link text-light fw-bold nav-hover p-md-2" href="#">BEEF</a>
+                        <a class="nav-link text-light fw-bold nav-hover p-md-2" href="#">CHICKEN</a>
+                        <a class="nav-link text-light fw-bold nav-hover" href="#">VEGETARIAN</a>
+                        <a class="nav-link text-light fw-bold nav-hover" href="#" >SPECIALITY</a>
+                        <a class="nav-link text-light fw-bold nav-hover" href="#">EXTREME PIZZA</a>
+                        <a class="nav-link text-light fw-bold nav-hover" href="#">SEA FOOD</a>
             
                   </nav>
             </div>    
           </div>
         </div>
 
-        <div class="row row-cols-1 row-cols-lg-2 g-5 ps-4 pe-4 mt-0" style="background-color: #E7E7E7;">
+        <div class="row row-cols-1 row-cols-lg-2 gy-5 gx-0 ps-3 pe-3 mt-0" style="background-color: #E7E7E7;">
           <div class="col">
               <div class="card h-100 mb-3 mx-auto" style="max-width: 540px;">
                   <div class="row g-0">
@@ -120,7 +132,7 @@
                           <h5 class="card-title text-danger">SUPER SUPREME</h5>
                           <p class="card-text">Our famous combination of Beef Pepperoni, juicy Beef, Mushrooms, Green Peppers, Onions, Black Olives and melting mozzarella cheese.</p>
                               <div class="d-flex justify-content-evenly">
-                              <select class="form-select me-2" aria-label="Default select example">
+                              <select class="form-select me-2 shadow-none" aria-label="Default select example">
                                   <option selected>Pan</option>
                                   <option value="1">One</option>
                                   <option value="2">Two</option>
