@@ -1,0 +1,16 @@
+# -----> for PK
+* -----> for FK
+
+student(#st_id, name, email, address, *tr_id)
+student_phone(#st_id, #phone)
+
+track(#tr_id, name)
+
+exam(#ex_id, exam_date, *course_id)
+
+course(#course_id, name, description, max_score)
+
+track_course(#*tr_id, #*course_id)
+
+
+student_exam(#*st_id, #*ex_id, score)

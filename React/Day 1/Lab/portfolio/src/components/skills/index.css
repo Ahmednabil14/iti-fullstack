@@ -1,0 +1,16 @@
+.skills {
+    background: #3B3B3B;
+    min-height: 100vh;
+}
+
+.percentage {
+    height: 30px;
+    width: 200px;
+}
+
+.skills-right p {
+    width: 5rem;
+    padding: 3px;
+    text-align: center;
+    color: white;
+}
