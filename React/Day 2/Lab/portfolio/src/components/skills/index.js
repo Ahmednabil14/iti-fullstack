@@ -1,5 +1,5 @@
 import './index.css';
-import React, { useState } from 'react';
+import React from 'react';
 
 const skillsArray = [
     { name: 'HTML', percent: 90 },
@@ -7,6 +7,18 @@ const skillsArray = [
     { name: 'JavaScript', percent: 70 },
     { name: 'Python', percent: 85 }
 ];
+
+const SkillProgressBar = ({ name, percent }) => {
+    return (
+        <div className='d-flex'>
+            <p className='bg-dark'>
+                {name}
+            </p>
+            <div className='percentage' style={{backgroundImage: `linear-gradient(to right, grey ${percent}%, white ${100 - percent}%)`}}>
+            </div>
+        </div>
+    );
+};
 
 export default function Skills() {
     return (
@@ -36,13 +48,7 @@ export default function Skills() {
                 </div>
                 <div className='skills-right'>
                     {skillsArray.map((skill) => (
-                        <div className='d-flex' key={skill.name}>
-                            <p className='bg-dark'>
-                                {skill.name}
-                            </p>
-                            <div className='percentage' style={{backgroundImage: `linear-gradient(to right, grey ${skill.percent}%, white ${100 - skill.percent}%)`}}>
-                            </div>
-                        </div>
+                        <SkillProgressBar name={skill.name} percent={skill.percent} />
                     ))}
                 </div>
             </div>
