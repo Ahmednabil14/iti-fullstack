@@ -1,24 +1,22 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
-
-function ColorSchemesExample() {
+function Nav() {
     return (
       <>
-        <Navbar bg="dark" data-bs-theme="dark">
-          <Container>
-            <Navbar.Brand href="#home">Shopify</Navbar.Brand>
-            <Nav className="me-auto">
-              <Nav.Link as={Link} to="/register">Register</Nav.Link>
-              <Nav.Link as={Link} to="/login">Login</Nav.Link>
-              <Nav.Link as={Link} to="/market">Market</Nav.Link>
-            </Nav>
-          </Container>
-        </Navbar>
+        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+              <div className="container-fluid">
+                <Link className="navbar-brand" to="/">Shopify</Link>
+                  <div className="navbar-nav ms-auto">
+                    <Link className="nav-link" to="/register">Register</Link>
+                    <Link className="nav-link" to="/login">Login</Link>
+                    <Link className="nav-link" to="/cart"><FontAwesomeIcon icon={faCartShopping} /></Link>
+                  </div>
+              </div>
+        </nav>
       </>
     )
   }
   
-  export default ColorSchemesExample;
+  export default Nav;
