@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>account</title>
+</head>
+<body>
+    <h1>list of Trainees</h1>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>track</th>
+        </tr>
+        {% for trainee in trainee_list %}
+        <tr>
+            <td>{{trainee.id}}</td>
+            <td>{{trainee.name}}</td>
+            <td>{{trainee.track}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

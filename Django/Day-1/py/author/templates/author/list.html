@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>authors - list</title>
+</head>
+<body>
+<h1>author list</h1>
+<!--{{authors}}-->
+<table border="1px solid" width="100%"
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+ {%for author in authors%}
+<tr>
+    <td>{{author.id}}</td>
+    <td>{{author.name}}</td>
+    <td>
+        <a href="http://127.0.0.1:9000/Authors/Update/{{author.id}}">Update</a>
+        <a href="{%url 'author_delete' author.id%}">Delete</a>
+        <a href="">show details</a>
+    </td>
+</tr>
+
+{%endfor%}
+
+</table>
+</body>
+</html>
