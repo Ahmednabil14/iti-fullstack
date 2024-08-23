@@ -1,0 +1,59 @@
+{% extends 'base_create.html' %}
+{% block 'title' %}
+    create trainee
+{% endblock %}
+{% block 'content' %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="first_name" class="form-label">first name: </label>
+            <input type="text" class="form-control" id="first_name" name="first_name">
+          </div>
+
+          <div class="mb-3">
+            <label for="last_name" class="form-label">last name: </label>
+            <input type="text" class="form-control" id="last_name" name="last_name">
+          </div>
+
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="gender">gender</label>
+            <select class="form-select" id="gender" name="gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+        </div>
+
+          <div class="mb-3">
+            <label for="birth_date" class="form-label">birt date: </label>
+            <input type="date" class="form-control" id="birth_date" name="birth_date">
+          </div>
+
+          <div class="mb-3">
+            <label for="address" class="form-label">address: </label>
+            <input type="text" class="form-control" id="address" name="address">
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">phone: </label>
+            <input type="number" class="form-control" id="phone" name="phone">
+          </div>
+
+
+        <div class="mb-3">
+          <label for="InputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="InputEmail1" name="input_email">
+        </div>
+
+        
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">track name</label>
+            <select class="form-select" id="inputGroupSelect01" name="trackobj">
+                {% for track in tracks %}
+                <option value="{{ track.id }}">{{ track.track_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+{% endblock %}

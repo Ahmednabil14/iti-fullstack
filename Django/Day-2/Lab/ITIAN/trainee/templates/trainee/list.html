@@ -1,0 +1,47 @@
+{% extends 'base_list.html' %}
+
+{% block 'titlt' %}
+    list trainee
+{% endblock %}
+
+
+{% block 'header' %}
+    list trainee
+{% endblock %}
+
+{% block 'table_headers' %}
+    <th>id</th>
+    <th>first name</th>
+    <th>last name</th>
+    <th>gender</th>
+    <th>birth date</th>
+    <th>address</th>
+    <th>phone number</th>
+    <th>email</th>
+    <th>track</th>
+    <th>options</th>
+{% endblock %}
+{% block 'table_body' %}
+    {% for trainee in trainee_list %}
+    <tr>
+        <td>{{trainee.trainee_id}}</td>
+        <td>{{trainee.first_name}}</td>
+        <td>{{trainee.last_name}}</td>
+        <td>{{trainee.gender}}</td>
+        <td>{{trainee.birth_data}}</td>
+        <td>{{trainee.address}}</td>
+        <td>{{trainee.phone}}</td>
+        <td>{{trainee.email}}</td>
+        <td>{{trainee.trackobj.track_name}}</td>
+        <td>
+            <a href="{%url 'update_trainee' trainee.trainee_id%}">Update</a>
+            <a href="{%url 'delete_trainee' trainee.trainee_id%}">Delete</a>
+            <a href="{%url 'show_details' trainee.trainee_id%}">Show Details</a>
+        </td>
+    </tr>
+    {% endfor %}
+{% endblock %}
+
+{% block 'create_button' %}
+<a href="{%url 'create_trainee'%}" class="btn btn-primary">Add Trainee</a>
+{% endblock %}

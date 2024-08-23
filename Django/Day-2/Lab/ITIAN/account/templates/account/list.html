@@ -1,0 +1,43 @@
+{% extends 'base_list.html' %}
+
+{% block 'titlt' %}
+    list accounts
+{% endblock %}
+
+
+{% block 'header' %}
+    list accounts
+{% endblock %}
+
+{% block 'table_headers' %}
+    <th>id</th>
+    <th>user name</th>
+    <th>email</th>
+    <th>password</th>
+    <th>created at</th>
+    <th>updated at</th>
+    <th>owner</th>
+    <th>options</th>
+{% endblock %}
+{% block 'table_body' %}
+    {% for account in accounts %}
+    <tr>
+        <td>{{account.id}}</td>
+        <td>{{account.username}}</td>
+        <td>{{account.email}}</td>
+        <td>{{account.password}}</td>
+        <td>{{account.created_at}}</td>
+        <td>{{account.updated_at}}</td>
+        <td>{{account.traineeobj.first_name}}  {{account.traineeobj.last_name}}</td>
+        <td>
+            <a href="{%url 'update_accounts' account.id%}">Update</a>
+            <a href="{%url 'delete_accounts' account.id%}">Delete</a>
+            <a href="{%url 'account_show_details' account.id%}">Show Details</a>
+        </td>
+    </tr>
+    {% endfor %}
+{% endblock %}
+
+{% block 'create_button' %}
+<a href="{%url 'create_accounts'%}" class="btn btn-primary">Add account</a>
+{% endblock %}

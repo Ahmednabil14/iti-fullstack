@@ -1,0 +1,15 @@
+{% extends 'base_update.html' %}
+{% block 'title' %}
+    update track
+{% endblock %}
+{% block 'content' %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="track_name" class="form-label">track name: </label>
+            <input type="text" class="form-control" id="track_name" name="track_name">
+          </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+{% endblock %}
