@@ -23,7 +23,7 @@
 {% endblock %}
 {% block 'table_body' %}
     {% for trainee in trainee_list %}
-    <tr>
+    <tr id="trainee-row-{{ trainee.trainee_id }}">
         <td>{{trainee.trainee_id}}</td>
         <td>{{trainee.first_name}}</td>
         <td>{{trainee.last_name}}</td>
@@ -35,7 +35,7 @@
         <td>{{trainee.trackobj.track_name}}</td>
         <td>
             <a href="{%url 'update_trainee' trainee.trainee_id%}">Update</a>
-            <a href="{%url 'delete_trainee' trainee.trainee_id%}">Delete</a>
+            <a href="{%url 'delete_trainee' trainee.trainee_id%}" class="delete-btn" data-id="{{ trainee.trainee_id }}">Delete</a>
             <a href="{%url 'show_details' trainee.trainee_id%}">Show Details</a>
         </td>
     </tr>
@@ -45,4 +45,26 @@
 {% block 'create_button' %}
 <a href="{%url 'create_trainee'%}" class="btn btn-primary">Add Trainee</a>
 <a href="{%url 'create_trainee_form' %}" class="btn btn-primary">Add Form Trainee</a>
+{% endblock %}
+
+{% block 'script' %}
+<script>
+    $(document).ready(function(){
+        $('.delete-btn').on('click', function(e){
+            e.preventDefault()
+            let id = $(this).data('id')
+            $.ajax({
+                url: "delete/" + id + "/",
+                method: 'DELETE',
+                success: function(){
+                    $('#trainee-row-' + id).remove()
+                    alert(`deleted successfully`)
+                },
+                error: function(){
+                    alert(`error deleting`)
+                }
+            })
+        })
+    })
+</script>
 {% endblock %}

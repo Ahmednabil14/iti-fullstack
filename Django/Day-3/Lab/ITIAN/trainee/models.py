@@ -12,5 +12,5 @@ class Trainee(models.Model):
     birth_data = models.DateField(null=True)
     address = models.CharField(max_length=100, null=True)
     phone = models.CharField(max_length=11, null=True)
-    email = models.EmailField(max_length=100, null=True)
+    email = models.EmailField(max_length=100)
     trackobj = models.ForeignKey("track.Track", on_delete=models.CASCADE)

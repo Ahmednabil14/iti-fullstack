@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import *
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
@@ -25,10 +27,13 @@ def update_trainee(request, id):
         return redirect('list_trainee')
     return render(request, 'trainee/update.html', context)
 
-def delete_trainee(request, id):   
-    trainee = Trainee.objects.get(pk=id)
-    trainee.delete()
-    return redirect('list_trainee')
+@csrf_exempt
+def delete_trainee(request, id):
+    if request.method == 'DELETE':
+        trainee = Trainee.objects.get(pk=id)
+        trainee.delete()
+        return JsonResponse({'status': True})
+    return JsonResponse({'status': False})
 
 
 def create_trainee(request):
@@ -42,7 +47,7 @@ def create_trainee(request):
         trainee.birth_data = request.POST.get('birth_date')
         trainee.address = request.POST.get('address')
         trainee.phone = request.POST.get('phone')
-        trainee.email = request.POST.get('email')
+        trainee.email = request.POST.get('input_email')
         trainee.trackobj = Track.objects.get(id=request.POST.get('trackobj'))
         trainee.save()
         return redirect('list_trainee')
