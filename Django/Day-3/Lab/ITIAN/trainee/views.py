@@ -3,6 +3,7 @@ from .models import *
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
+
 # Create your views here.
 
 def list_trainee(request):
@@ -67,6 +68,33 @@ def create_trainee_form(request):
     context['form'] = form
     if request.method == 'POST':
         form = NewTrainee(request.POST, request.FILES)
+        if form.is_valid():
+            Trainee.objects.create(
+            first_name=form.cleaned_data['first_name'],
+            image=form.cleaned_data['image'],
+            last_name=form.cleaned_data['last_name'],
+            gender=form.cleaned_data['gender'],
+            birth_data=form.cleaned_data['birth_date'],
+            address=form.cleaned_data['address'],
+            phone=form.cleaned_data['phone'],
+            email=form.cleaned_data['email'],
+            trackobj=Track.objects.get(pk=form.cleaned_data['track'])
+            )
+            return redirect('list_trainee')
+        else:
+            print(form.errors)
+    
+    return render(request, 'trainee/create_form.html', context)
+
+
+from .crispy_form import NewCrispyTrainee
+
+def create_trainee_crispy_form(request):
+    context = {}
+    form = NewCrispyTrainee()
+    context['form'] = form
+    if request.method == 'POST':
+        form = NewCrispyTrainee(request.POST, request.FILES)
         if form.is_valid():
             Trainee.objects.create(
             first_name=form.cleaned_data['first_name'],
