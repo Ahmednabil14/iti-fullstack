@@ -18,11 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-
+from account import views
+from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('Acounts/', include('account.urls')),
     path('Track/', include('track.urls')),
-    path('Trainee/', include('trainee.urls'))
+    path('Trainee/', include('trainee.urls')),
+    path('Register/', views.register, name ='register'),
+    path('Login/', LoginView.as_view(template_name='account/login.html'), name='login'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

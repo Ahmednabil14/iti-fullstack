@@ -119,12 +119,15 @@ from .model_form import NewTraineModelForm
 def create_trainee_modelform(request):
     context = {}
     form = NewTraineModelForm()
-    context['form'] = form
     if request.method == 'POST':
         form = NewTraineModelForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save(commit=True)
+            trainee = form.save(commit=False)
+            trainee.trackobj = Track.objects.get(pk=form.cleaned_data['track'])
+            trainee.save()
             return redirect('list_trainee')
         else:
             print(form.errors)
+    context['form'] = form
+
     return render(request, 'trainee/create_modelform.html', context)
