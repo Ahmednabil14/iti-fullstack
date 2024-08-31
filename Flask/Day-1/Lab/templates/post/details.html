@@ -6,7 +6,6 @@ Home
 
 {% block content %}
 <h1>Posts</h1>
-<a class="btn btn-info" href="{{url_for('create')}}">Add Post</a>
 <table class="table">
     <thead>
       <tr>
@@ -18,7 +17,6 @@ Home
       </tr>
     </thead>
     <tbody>
-        {% for post in posts %}
         <tr>
             <td>{{ post.id }}</td>
             <td>{{ post.name }}</td>
@@ -27,12 +25,9 @@ Home
                 <img src="/static/images/{{ post.image }}" alt="" width="50px" height="50px">
             </td>
             <td>
-                <a class="btn btn-info" href="{{url_for('post_details', id=post.id)}}">Details</a>
-                <a class="btn btn-info" href="{{url_for('update', id=post.id)}}">Edit</a>
-                <a class="btn btn-info" href="{{url_for('delete', id=post.id)}}">Delete</a>
+                <a class="btn btn-info" href="{{url_for('home')}}">Back To Home</a>
             </td>
         </tr>
-        {% endfor %}
     </tbody>
   </table>
 {% endblock %}
