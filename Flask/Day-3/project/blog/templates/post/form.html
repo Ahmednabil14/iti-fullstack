@@ -1,0 +1,11 @@
+{% extends './base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+{% block title %}
+create post
+{% endblock %}
+
+{% block content %}
+<h1>create Post</h1>
+{{ form.hidden_tag() }}
+{{ render_form(form) }}
+{% endblock %}
