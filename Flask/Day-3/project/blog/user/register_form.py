@@ -1,4 +1,4 @@
-from wtforms import StringField, validators, PasswordField, SubmitField
+from wtforms import StringField, validators, PasswordField, SubmitField, FileField
 from flask_wtf import FlaskForm
 
 class RegisterForm(FlaskForm):
@@ -6,4 +6,5 @@ class RegisterForm(FlaskForm):
     last_name = StringField("Last Name", validators=[validators.DataRequired(), validators.Length(min=3)])
     email = StringField("Email", validators=[validators.DataRequired(), validators.Email()])
     password = PasswordField("Password", validators=[validators.DataRequired(), validators.Length(min=8)])
+    image = FileField('Image')
     submit = SubmitField("Register")

@@ -5,29 +5,23 @@ Home
 {% endblock %}
 
 {% block content %}
-<h1>Posts</h1>
-<table class="table">
-    <thead>
-      <tr>
-        <th>id</th>
-        <th>name</th>
-        <th>description</th>
-        <th>image</th>
-        <th>options</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>{{ post.id }}</td>
-            <td>{{ post.name }}</td>
-            <td>{{ post.description }}</td>
-            <td>
-                <img src="/static/images/{{ post.image }}" alt="" width="50px" height="50px">
-            </td>
-            <td>
-                <a class="btn btn-info" href="{{url_for('posts.home')}}">Back To Home</a>
-            </td>
-        </tr>
-    </tbody>
-  </table>
-{% endblock %}
+<div class="row">
+    <div class="col-md-12 mb-4">
+      <div class="card w-75 container">
+        <div class="card-body p-3">
+          <div class="row">
+            <div class="col-12 d-flex align-items-center">
+              <img src="/static/images/users/{{ post.user.image }}" alt="Profile Picture" class="rounded-circle" width="40px" height="40px">
+              <h5 class="card-title">{{ post.user.first_name | capitalize}} {{ post.user.last_name | capitalize }}</h5>
+            </div>
+          </div>
+          <p class="card-text mt-2">{{ post.description }}</p>
+          <img class="card-img-bottom" src="/static/images/{{ post.image }}" alt="Card image cap" sizes="50%">
+          <div class="card-footer">
+            <a class="btn btn-primary" href="{{url_for('posts.update', id=post.id)}}">Edit</a>
+            <a class="btn btn-danger" href="{{url_for('posts.delete', id=post.id)}}">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>{% endblock %}

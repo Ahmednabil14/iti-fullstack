@@ -19,5 +19,6 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.String, nullable=False)
     email = db.Column(db.String, nullable=False)
     password = db.Column(db.String, nullable=False)
+    image = db.Column(db.String, nullable=True)
     posts = db.relationship('Post', backref='user', lazy=True)
 

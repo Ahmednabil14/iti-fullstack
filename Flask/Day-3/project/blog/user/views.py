@@ -4,6 +4,9 @@ from .register_form import RegisterForm
 from blog.user.login_form import LoginForm
 from blog.models import User, db
 from flask_login import login_user, logout_user, current_user, login_required
+import os
+from werkzeug.utils import secure_filename
+
 
 @users_blueprint.route("/<int:id>", endpoint="posts")
 @login_required
@@ -15,10 +18,14 @@ def posts(id):
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
+        image = request.files["image"]
+        image_name = secure_filename(image.filename)
+        image.save(os.path.join("blog/static/images/users", image_name))     
         data = dict(request.form)
         del data['csrf_token']
         del data['submit']
         user = User(**data)
+        user.image = image_name
         db.session.add(user)
         db.session.commit()
         return redirect(url_for("user.login"))        

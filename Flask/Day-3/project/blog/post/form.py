@@ -1,8 +1,8 @@
-from wtforms import Form, StringField, validators, FileField, SubmitField
+from wtforms import StringField, validators, FileField, SubmitField
 from flask_wtf import FlaskForm
 
 class PostForm(FlaskForm):
-    title = StringField('Title' , validators=[validators.DataRequired(), validators.Length(5)])
-    content = StringField('Content' , validators=[validators.DataRequired()])
+    title = StringField('Title')
+    content = StringField('Content')
     image = FileField('Image')
-    submit = SubmitField("Save new Student")
+    submit = SubmitField("Add Post")
