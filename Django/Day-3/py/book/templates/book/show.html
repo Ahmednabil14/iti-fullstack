@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{%block 'title'%}
+book - show
+{%endblock%}
+{%block 'content'%}
+<h1>book show data {{id}}</h1>
+ID:{{book.id}}
+</br>
+Name:{{book.name}}
+</br>
+<img src="{{book.getimage}}">
+{%endblock%}

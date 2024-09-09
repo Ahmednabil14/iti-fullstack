@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%block 'title'%}
+book - Update
+{%endblock%}
+{%block 'content'%}
+<h1>book Update {{id}}</h1>
+<form method="POST">
+    {%csrf_token%}
+    <label>Name:</label>
+    <input type="text" name="bookname" required value="{{book.name}}">
+<br>
+    <label>Version:</label>
+    <input type="number" name="bookversion" required value="{{book.version}}">
+    <br>
+    <label>image:</label>
+    <input type="file" name="bookimage">
+    <img src="{{book.image}}"/>
+    <br>
+  <label>author:</label>
+
+    <select name="bookauthorid">
+        {%for author in authors%}
+        <option value="{{author.id}}"     {%if author.id == book.authorobj.id%}
+    selected {%endif%} >{{author.name}}</option>
+        {%endfor%}
+    </select>
+<br>
+<input type="submit" value="Add">
+
+</form>
+<div style="color:red">
+    <h1>{{error}}</h1>
+</div>
+{%endblock%}

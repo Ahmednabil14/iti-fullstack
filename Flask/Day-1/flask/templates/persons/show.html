@@ -1,0 +1,16 @@
+{% extends './base.html' %}
+
+{% block main %}
+
+    <h1> Person Info </h1>
+<div class="card" style="width: 18rem;">
+
+  <img src="{{url_for('static', filename=image)}}"  class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{person['name']}}</h5>
+    <p class="card-text">{{person['grade']}}</p>
+    <a href="{{ url_for('persons.index')}}" class="btn btn-primary">Back to all persons</a>
+  </div>
+</div>
+
+{% endblock %}

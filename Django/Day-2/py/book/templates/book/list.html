@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%block 'title'%}
+book - List
+{%endblock%}
+{%block 'content'%}
+<h1>book list</h1>
+<table width="100%" height="100%" border="1px solid"
+>
+    <a href="{%url 'book_create'%}">add new book</a>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>verion</th>
+        <th>image</th>
+        <th>author</th>
+        <th>actions</th>
+    </tr>
+    {%for book in books%}
+<tr>
+    <td>{{book.id}}</td>
+    <td>{{book.name}}</td>
+    <td>{{book.version}}</td>
+    <td>{{book.image}}</td>
+    <td>{{book.authorobj.name}}</td>
+    <td>
+        <a href="{%url 'book_show' book.id%}">show details</a>
+        <a href="{%url 'book_update' book.id%}">update</a>
+        <a href="{%url 'book_delete' book.id%}">delete</a>
+    </td>
+</tr>
+{%endfor%}
+
+</table>
+{%endblock%}

@@ -1,0 +1,19 @@
+{% extends './base.html' %}
+
+{% block main %}
+
+    <h1> Track Info </h1>
+<div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">{{track.name}}</h5>
+    <a href="{{ url_for('tracks.index')}}" class="btn btn-primary">Back to all Tracks</a>
+  </div>
+</div>
+
+<h1> Students in this track </h1>
+    {% for std in  track.students %}
+        <li> Hi <a href="{{std.show_url}}"> {{std.name}}</a> </li>
+    {% endfor %}
+
+{% endblock %}

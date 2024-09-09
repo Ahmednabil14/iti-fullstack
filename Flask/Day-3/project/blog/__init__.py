@@ -8,6 +8,8 @@ from flask_wtf import CSRFProtect
 from blog.user import login_manager
 from flask_restful import Api
 from flask_wtf.csrf import *
+from blog.user import users_blueprint
+
 
 def create_app(conf_option='prd'):
     app = Flask(__name__)
@@ -27,7 +29,6 @@ def create_app(conf_option='prd'):
     from blog.post import posts_blueprint
     app.register_blueprint(posts_blueprint)
 
-    from blog.user import users_blueprint
     app.register_blueprint(users_blueprint)
 
     from blog.post.api.views import  PostList, HandelPost

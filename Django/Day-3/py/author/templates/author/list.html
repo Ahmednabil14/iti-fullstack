@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{%block 'title'%}
+Author - List
+{%endblock%}
+{%block 'content'%}
+<h1>author list</h1>
+<!--{{authors}}-->
+<table border="1px solid" width="100%"
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+ {%for author in authors%}
+<tr>
+    <td>{{author.id}}</td>
+    <td>{{author.name}}</td>
+    <td>
+
+        <a href="{%url 'author_update' author.id%}">Update</a>
+        <a href="{%url 'author_delete' author.id%}">Delete</a>
+        <a href="">show details</a>
+    </td>
+</tr>
+
+{%endfor%}
+
+</table>
+{%endblock%}

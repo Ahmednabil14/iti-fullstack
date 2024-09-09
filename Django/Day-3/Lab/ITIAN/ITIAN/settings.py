@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'track.apps.TrackConfig',
     'trainee.apps.TraineeConfig',
-    'crispy_forms'
+    'crispy_forms',
+    "crispy_bootstrap4"
 ]
 
 MIDDLEWARE = [
@@ -133,4 +134,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CRISPY_TEMPLATE_PACK = 'Bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"

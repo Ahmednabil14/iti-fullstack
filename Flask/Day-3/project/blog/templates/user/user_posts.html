@@ -18,7 +18,7 @@ Blog
             </div>
           </div>
           <p class="card-text mt-2">{{ post.description }}</p>
-          <img class="card-img-bottom" src="/static/images/{{ post.image }}" alt="Card image cap" sizes="50%">
+          <img class="card-img-bottom" src="/static/images/posts/{{ post.image }}" alt="Card image cap" sizes="50%">
           <div class="card-footer">
             <a class="btn btn-primary" href="{{url_for('posts.post_details', id=post.id)}}">Details</a>
             <a class="btn btn-primary" href="{{url_for('posts.update', id=post.id)}}">Edit</a>

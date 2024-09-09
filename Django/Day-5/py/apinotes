@@ -1,0 +1,10 @@
+call api in python
+https://www.geeksforgeeks.org/how-to-make-api-calls-using-python/
+1-install djangorestframework
+pip install djangorestframework
+2-setting in apps
+'rest_framwork'
+https://www.django-rest-framework.org/api-guide/viewsets/
+
+https://github.com/josspheenboles/cu2024feb.git
+https://www.geeksforgeeks.org/creating-custom-decorator-in-django-for-different-permissions/

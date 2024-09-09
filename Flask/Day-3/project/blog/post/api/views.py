@@ -47,4 +47,3 @@ class HandelPost(Resource):
         db.session.delete(post)
         db.session.commit()
         return Post.query.all()
-    

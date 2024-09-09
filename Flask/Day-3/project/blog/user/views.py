@@ -37,8 +37,7 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(email=request.form["email"]).first()
         if user and user.password == request.form["password"]:
-            u = login_user(user)
-            print(u)
+            login_user(user)
             return redirect(url_for("posts.home"))
         else:
             flash("Invalid email or password")  

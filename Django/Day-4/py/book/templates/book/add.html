@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block 'title'%}
+book - Add
+{%endblock%}
+{%block 'content'%}
+<form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    <label>Name:</label>
+    <input type="text" name="bookname" required>
+<br>
+    <label>Version:</label>
+    <input type="number" name="bookversion" required>
+    <br>
+    <label>image:</label>
+    <input type="file" name="bookimage">
+    <br>
+  <label>author:</label>
+    <select name="bookauthorid">
+        {%for author in authors%}
+        <option value="{{author.id}}" >{{author.name}}</option>
+        {%endfor%}
+    </select>
+<br>
+<input type="submit" value="Add">
+
+</form>
+<div style="color:red">
+    <h1>{{error}}</h1>
+</div>
+{%endblock%}
