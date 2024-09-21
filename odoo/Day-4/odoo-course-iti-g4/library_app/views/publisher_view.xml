@@ -1,0 +1,65 @@
+<odoo>
+    <record id="publisher_tree_view" model="ir.ui.view">
+        <field name="name">publisher.tree.view</field>
+        <field name="model">lr.publisher</field>
+        <field name="arch" type="xml">
+<!--            <tree create="0" write="0" delete="0">-->
+            <tree>
+                <field name="name"/>
+                <field name="national_id" string="National ID"/>
+                <field name="date_join"/>
+                <field name="is_available" optional="hide"/>
+                <field name="active" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="publisher_form_view" model="ir.ui.view">
+        <field name="name">publisher.form.view</field>
+        <field name="model">lr.publisher</field>
+        <field name="arch" type="xml">
+<!--            <form create="0" write="0" delete="0">-->
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="national_id" string="National ID"/>
+                            <field name="book_ids" widget="many2many_tags"/>
+                            <field name="other_book_ids" widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <field name="date_join"/>
+                            <field name="is_available"/>
+                            <field name="image"/>
+                            <field name="active" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="publisher_search_view" model="ir.ui.view">
+        <field name="name">publisher.search.view</field>
+        <field name="model">lr.publisher</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="national_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="publisher_action" model="ir.actions.act_window">
+        <field name="name">Publishers</field>
+        <field name="res_model">lr.publisher</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menuitem_publisher"
+              name="All Publishers"
+              parent="menu_root_publisher"
+              action="publisher_action"
+              groups="library_app.library_manager_group"/>
+</odoo>

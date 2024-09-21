@@ -1,0 +1,26 @@
+<odoo>
+    <record id="add_publisher_form_view" model="ir.ui.view">
+        <field name="name">add.publisher.form.view</field>
+        <field name="model">lr.add.publisher</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="book_id" readonly="1"/>
+                    <field name="publisher_id"/>
+                </group>
+                <footer>
+                    <button name="action_add_publisher" type="object" class="btn-primary" string="Confirm"/>
+                    <button class="btn-secondary" string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="add_publisher_action" model="ir.actions.act_window">
+        <field name="name">Add Publisher</field>
+        <field name="res_model">lr.add.publisher</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="library_app.add_publisher_form_view"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

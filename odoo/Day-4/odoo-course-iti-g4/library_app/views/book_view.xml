@@ -1,0 +1,115 @@
+<odoo>
+    <record id="book_tree_view" model="ir.ui.view">
+        <field name="name">book.tree.view</field>
+        <field name="model">lr.book</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref"/>
+                <field name="name"/>
+                <field name="create_uid"/>
+                <field name="create_date"/>
+                <field name="publisher_id"/>
+                <field name="code"/>
+                <field name="price"/>
+                <field name="state"/>
+                <field name="published_date"/>
+                <field name="age"/>
+                <field name="is_published"/>
+                <field name="active" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="book_form_view" model="ir.ui.view">
+        <field name="name">book.form.view</field>
+        <field name="model">lr.book</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_draft"
+                            type="object"
+                            class="btn-secondary"
+                            string="Draft"
+                            invisible="state != 'published'"/>
+                    <button name="action_confirm"
+                            type="object"
+                            class="btn-primary"
+                            string="Confirm"
+                            invisible="state != 'draft'"/>
+                    <button name="action_published"
+                            type="object"
+                            class="btn-success"
+                            string="Published"
+                            invisible="state != 'confirm'"/>
+                    <button name="action_add_publisher_wizard"
+                            type="object"
+                            class="btn-secondary"
+                            string="Add/change Publisher"/>
+                    <field name="state" widget="statusbar"/>
+<!--                    options="{'clickable': '1'}"-->
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="ref" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group string="General Info.">
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="code" required="1"/>
+                            <field name="price" groups="library_app.library_manager_group"/>
+                            <field name="publisher_id" readonly="1"/>
+<!--                            <field name="publisher_id" domain="[('is_available', '=', True)]"/>-->
+<!--                            <field name="publisher_id" readonly="1"/>-->
+<!--                            attrs="{'readonly': []}"-->
+                        </group>
+                        <group>
+                            <field name="published_date"/>
+                            <field name="published_datetime"/>
+                            <field name="age"/>
+                            <field name="is_published"/>
+                            <field name="cover" widget="image" options="{'size': [100, 100]}"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Comments">
+                            <field name="book_line_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="date"/>
+                                    <field name="description"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="library_book_action" model="ir.actions.act_window">
+        <field name="name">Library Books</field>
+        <field name="res_model">lr.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="library_book_server_action" model="ir.actions.server">
+        <field name="name">Published</field>
+        <field name="model_id" ref="library_app.model_lr_book"/>
+        <field name="binding_model_id" ref="library_app.model_lr_book"/>
+        <field name="state">code</field>
+        <field name="code">action = records.action_server_published()</field>
+    </record>
+
+    <menuitem id="menuitem_library_book"
+              name="All Books"
+              parent="menu_root_book"
+              action="library_book_action"/>
+</odoo>
